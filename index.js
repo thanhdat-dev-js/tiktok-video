@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 
 const fs = require("fs");
-async function run(keyword) {
+async function crawler(keyword) {
   try {
     const browser = await puppeteer.launch({
       headless: false,
@@ -460,6 +460,7 @@ async function run(keyword) {
   }
 }
 
-["facebook", "youtube", "tiktok"].forEach((item) => {
-  run(item);
+const keywords = ["facebook", "youtube", "tiktok"];
+keywords.forEach((item) => {
+  crawler(item);
 });
