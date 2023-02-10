@@ -1,5 +1,4 @@
 const puppeteer = require("puppeteer");
-const ck = require("./ck.json");
 const fs = require("fs");
 async function crawler(keyword) {
   try {
@@ -7,7 +6,6 @@ async function crawler(keyword) {
       headless: false,
     });
     const page = await browser.newPage();
-    await page.setCookie(...ck);
     await page.goto("https://www.tiktok.com/");
 
     var index = 0;
